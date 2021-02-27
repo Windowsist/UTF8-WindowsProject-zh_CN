@@ -1,4 +1,4 @@
-﻿// WindowsProject.cpp : 定义应用程序的入口点。
+// WindowsProject.cpp : 定义应用程序的入口点。
 //
 
 // 不再使用 UNICODE, 改用UTF8
