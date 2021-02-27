@@ -137,7 +137,6 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
             switch (wmId)
             {
             case IDM_ABOUT:
-                MessageBoxA(hWnd,"😎☺","的❤😁😀",0);
                 DialogBoxA(hInst, MAKEINTRESOURCEA(IDD_ABOUTBOX), hWnd, About);
                 break;
             case IDM_EXIT:
