@@ -39,6 +39,8 @@ MAKEINTRESOURCE 或 MAKEINTRESOURCEW 都改成 MAKEINTRESOURCEA
 
 源文件需要用UTF-8编码保存, 不能是"UTF-8 with BOM", 否则编译器会把内容转换成ANSI
 
+资源文件(rc文件)和resource.h还是要用"UTF-16 LE"保存, 因为资源编译器不支持UTF-8
+
 #### 清单中加入元素，告诉系统这是UTF-8应用程序
 
 ``` xml
