@@ -78,12 +78,12 @@ ATOM MyRegisterClass(HINSTANCE hInstance)
     wcex.cbClsExtra     = 0;
     wcex.cbWndExtra     = 0;
     wcex.hInstance      = hInstance;
-    wcex.hIcon          = LoadIconA(hInstance, MAKEINTRESOURCE(IDI_WINDOWSPROJECT));
+    wcex.hIcon          = LoadIconA(hInstance, MAKEINTRESOURCEA(IDI_WINDOWSPROJECT));
     wcex.hCursor        = LoadCursorA(nullptr, IDC_ARROW);
     wcex.hbrBackground  = (HBRUSH)(COLOR_WINDOW+1);
     wcex.lpszMenuName   = MAKEINTRESOURCEA(IDC_WINDOWSPROJECT);
     wcex.lpszClassName  = szWindowClass;
-    wcex.hIconSm        = LoadIconA(wcex.hInstance, MAKEINTRESOURCE(IDI_SMALL));
+    wcex.hIconSm        = LoadIconA(wcex.hInstance, MAKEINTRESOURCEA(IDI_SMALL));
 
     return RegisterClassEx(&wcex);
 }
@@ -137,7 +137,7 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
             switch (wmId)
             {
             case IDM_ABOUT:
-                DialogBoxA(hInst, MAKEINTRESOURCE(IDD_ABOUTBOX), hWnd, About);
+                DialogBoxA(hInst, MAKEINTRESOURCEA(IDD_ABOUTBOX), hWnd, About);
                 break;
             case IDM_EXIT:
                 DestroyWindow(hWnd);

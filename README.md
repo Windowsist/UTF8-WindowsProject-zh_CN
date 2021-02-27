@@ -10,7 +10,7 @@
 
 ### 编写 C/C++ Win32 UTF-8 应用程序
 
-#### 关闭UNiCODE
+#### 关闭UNICODE
 
 删除预定义 UNICODE _UNICODE 或在源文件前加入
 
@@ -23,7 +23,15 @@
 #endif
 ```
 
-源文件所有 -W Api 替换成 -A Api，例如MessageBox或MessageBoxW都改成MessageBoxA
+源文件所有 -W Api 替换成 -A Api，(包括函数名, 类名, 宏名)
+
+例如
+
+MessageBox 或 MessageBoxW 都改成 MessageBoxA
+
+WNDCLASSEX 或 WNDCLASSEXW 都改成 WNDCLASSEXA
+
+MAKEINTRESOURCE 或 MAKEINTRESOURCEW 都改成 MAKEINTRESOURCEA
 
 所有wchar_t都改成char
 
