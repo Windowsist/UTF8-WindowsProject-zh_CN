@@ -37,7 +37,14 @@ MAKEINTRESOURCE 或 MAKEINTRESOURCEW 都改成 MAKEINTRESOURCEA
 
 #### 改用UTF-8代码页
 
-Visual Studio 默认源文件编码是UTF-8 with BOM, 编译器会把它转换成指定ANSI编码, 所以要把源文件编码改成UTF-8
+源文件需要用UTF-8编码保存, 添加编译选项 "/utf-8" (集源和到 UTF-8 的执行字符集)
+
+CMake 可以用以下方法, Visual Studio 在项目属性 C/C++ 设置中添加自定义命令行参数 "/utf-8"
+
+``` cmake
+string(APPEND CMAKE_C_FLAGS " /utf-8")
+string(APPEND CMAKE_CXX_FLAGS " /utf-8")
+```
 
 #### 清单中加入元素，告诉系统这是UTF-8应用程序
 
