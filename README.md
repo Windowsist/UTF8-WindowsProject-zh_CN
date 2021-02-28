@@ -37,7 +37,15 @@ MAKEINTRESOURCE 或 MAKEINTRESOURCEW 都改成 MAKEINTRESOURCEA
 
 #### 改用UTF-8代码页
 
-源文件需要用UTF-8编码保存, 不能是"UTF-8 with BOM", 否则编译器会把内容转换成ANSI
+添加编译参数"/utf-8", CMake可以添加以下内容, Visual Studio可以在项目属性-C/C++-自定义命令行参数中添加"/utf-8"
+(如果不添加，只有文件用UTF-8保存，会出现部分字符显示不正确的问题)
+
+``` cmake
+string(APPEND CMAKE_C_FLAGS " /utf-8")
+string(APPEND CMAKE_CXX_FLAGS " /utf-8")
+```
+
+源文件需要用UTF-8编码保存, 不能是"UTF-8 with BOM"
 
 资源文件(rc文件)和resource.h还是要用"UTF-16 LE"保存, 因为资源编译器不支持UTF-8
 
